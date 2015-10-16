@@ -1,4 +1,4 @@
-APP=reversebits
+APP=bitreverse
 
 bitreverse: main.c
 	@gcc -o $(APP) main.c -DEXECUTABLE_NAME='"$(APP)"'
