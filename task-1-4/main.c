@@ -3,9 +3,13 @@
 *
 *						TASK-1-4
 *
+*	Description:
+*		This program takes a unsigned integer (32 bit) and prints the
+*		number of bits which are 1.
+*
 *	Authors:
-*	Milad Lashini
-*	Saeid Yazdani
+*		Milad Lashini
+*		Saeid Yazdani
 */
 
 #include "stdio.h"

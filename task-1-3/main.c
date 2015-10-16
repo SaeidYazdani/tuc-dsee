@@ -2,6 +2,8 @@
 *		Design Of Software For Embedde Systems
 *
 *						TASK-1-3
+*	Description:
+*		This program takes a unsigned char (8 bit) and reverses its bits.
 *
 *	Authors:
 *	Milad Lashini

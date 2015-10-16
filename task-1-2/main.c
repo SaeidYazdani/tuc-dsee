@@ -2,6 +2,8 @@
 *	Design Of Software For Embedde Systems
 *
 *			TASK-1-2
+*	Description:
+*		This program prints "Hello World" into stdout
 *
 *	Authors:
 *	Milad Lashini
