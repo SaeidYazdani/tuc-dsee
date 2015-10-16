@@ -9,7 +9,7 @@
 */
 
 #include "stdio.h"
-#include "stdint.h"
+#include "stdint.h" //best friend of embedded programmers
 
 //name of the executable (read from Makefile)
 #ifndef EXECUTABLE_NAME			//if app name is not supplied through make
@@ -35,7 +35,7 @@ int main (int argc, char *argv[]) {
  		return exit_application(ERROR_INVALID_ARG_COUNT);
  	}
 
- 	//check for validty of argument (should be 0 t0 UINT32_MAX)
+ 	//check for validty of argument (should be 0 to UINT32_MAX)
  	//TODO this can not tell if the given argument was integer or string(char)
  	//c's atoi() function will case almost anything to integer!!! bad bad bad!
 	int value = atoi(argv[1]); //convert argument 1 to integer
@@ -60,13 +60,13 @@ int exit_application(int error_code) {
 	switch(error_code) {
 
 		case ERROR_INVALID_ARG_COUNT:
-			printf("no or invalid arguments. usage: %s [0,255]\n"
-				, EXECUTABLE_NAME);
+			printf("no or invalid arguments. usage: %s [0,%u]\n"
+				, EXECUTABLE_NAME, UINT32_MAX);
 			return error_code;
 
 		case ERROR_INVALID_ARG_RANGE:
-			printf("argument should be between 0 and 255. usage: %s [0,255]\n"
-				, EXECUTABLE_NAME);
+			printf("argument should be between 0 and %u. usage: %s [0,%u]\n"
+				, UINT32_MAX, EXECUTABLE_NAME, UINT32_MAX);
 			return error_code;
 
 		default:
