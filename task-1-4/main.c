@@ -38,7 +38,7 @@ int main (int argc, char *argv[]) {
  	//check for validty of argument (should be 0 to UINT32_MAX)
  	//TODO this can not tell if the given argument was integer or string(char)
  	//c's atoi() function will case almost anything to integer!!! bad bad bad!
-	int value = atoi(argv[1]); //convert argument 1 to integer
+	uint32_t value = atoi(argv[1]); //convert argument 1 to integer
 	if((value > UINT32_MAX || value < 0)) {
 		return exit_application(ERROR_INVALID_ARG_RANGE);
 	}
@@ -83,10 +83,10 @@ int exit_application(int error_code) {
 *	@return	int	Number of ones in its bits
 */
 uint8_t count_set_bits(uint32_t i) {
-	 i = i - ((i >> 1) & 0x55555555);
-     i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+	 i = i - ((i >> 1) & 0x55555555); //01010101
+     i = (i & 0x33333333) + ((i >> 2) & 0x33333333); //00110011
      return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
-
+     //0x0F0F0F0F - 0000111100001111
 }
 
 /* function definitons end */
